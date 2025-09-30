@@ -53,3 +53,31 @@ Git 설정하고 초기화 하기
     1. github 올라가면 git으로 관리되지 않는 것
     2. github 원격 저장소
     3. git 로컬 저장소
+14. 원격 저장소를 등록
+    1. git remote add 식별자 원격레포주소
+    2. git remote add origin 원격레포주소
+    3. git remote add stream 원격레포주소
+    4. git remote -v
+15. git push
+    1. git push -u 원격레포식별자 브랜치이름
+    2. origin -> 원격레포식별자
+    3. main -> 규칙
+    4. git push -u origin main
+       1. permission
+          1. remote 등록 주소가 잘못되지 않았는지 확인
+          2. vscode에 연결된 git 계정과 내가 올리려고 하는 github 계정이 일치하는지 확인
+          3. 팀 프로젝트일 경우, 초대가 안된 것 일 수 있음
+16. git branch(가지)
+    1. 하나의 저장소 안에서 독립적으로 작업할 수 있는 개발 라인을 말합니다.
+    2. git checkout -b 브랜치명
+    3. git switch -c 브랜치명 (2.22, 2.24)
+    4. git branch -v
+       1. 기능: feature/기능명
+       2. 버그: fix/버그명
+       3. 긴급 수정: hotifx/긴급수정명
+       4. 문서: docs/문서명
+       5. 설정/빌드: chore/설정빌드명
+       6. 리팩토링: refactor/리팩토리명
+    5. 로그인 기능
+       1. git switch -c feature/social-login
+    6. 참고: main 브랜치는 절대로 개발하지 않는다.
