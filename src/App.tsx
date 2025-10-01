@@ -10,6 +10,7 @@ import PublicOnlyRoute from "./components/routes/PublicOnlyRoute";
 import ProtectedRoutes from "./components/routes/ProtectedRoutes";
 
 export default function App() {
+  return (
     <>
       <Routes>
         <Route element={<Default />}>
