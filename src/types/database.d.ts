@@ -41,31 +41,31 @@ export type Database = {
     Tables: {
       posts: {
         Row: {
-          category: string | null;
+          category: string;
           content: string;
           created_at: string;
           id: number;
           profile_id: string;
           thumbnail: string;
-          title: string | null;
+          title: string;
         };
         Insert: {
-          category?: string | null;
+          category: string;
           content: string;
           created_at?: string;
           id?: number;
           profile_id?: string;
           thumbnail: string;
-          title?: string | null;
+          title: string;
         };
         Update: {
-          category?: string | null;
+          category?: string;
           content?: string;
           created_at?: string;
           id?: number;
           profile_id?: string;
           thumbnail?: string;
-          title?: string | null;
+          title?: string;
         };
         Relationships: [
           {
@@ -83,7 +83,7 @@ export type Database = {
           bio: string | null;
           created_at: string;
           display_name: string | null;
-          email: string;
+          email: string | null;
           id: string;
         };
         Insert: {
@@ -91,7 +91,7 @@ export type Database = {
           bio?: string | null;
           created_at?: string;
           display_name?: string | null;
-          email: string;
+          email?: string | null;
           id?: string;
         };
         Update: {
@@ -99,7 +99,7 @@ export type Database = {
           bio?: string | null;
           created_at?: string;
           display_name?: string | null;
-          email?: string;
+          email?: string | null;
           id?: string;
         };
         Relationships: [];
