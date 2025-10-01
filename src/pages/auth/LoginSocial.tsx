@@ -8,7 +8,6 @@ export default function LoginSocial() {
   };
 
   const handleGithubLogin = async () => {
-    // console.log("Github login");
     try {
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "github",

@@ -32,10 +32,10 @@ export const useAuthStore = create<AuthStore>()(
           }),
         hydrateFromAuth: async () => {
           set({ isLoading: true });
-          // 1. 클레임 가져오기
+          // (1) 클레임 가져오기
           const { data, error } = await supabase.auth.getClaims();
 
-          // 세션없음 or 초기화 전 일 수 있음
+          // 세션 없음 or 초기화전일 수 있음
           if (error) {
             set({ claims: null, profile: null, isLoading: false });
             return;
@@ -44,7 +44,7 @@ export const useAuthStore = create<AuthStore>()(
           const claims = data?.claims as Claims;
           set({ claims: claims });
 
-          // 2.프로필 조회하기
+          // (2) 프로필을 조회
           if (claims?.sub) {
             const { data: profiles, error: profilesError } = await supabase
               .from("profiles")
@@ -52,14 +52,14 @@ export const useAuthStore = create<AuthStore>()(
               .eq("id", claims.sub || "")
               .single();
 
-            // 에러가 발생하면
             if (profilesError) {
               set({ claims: null, profile: null, isLoading: false });
             }
 
-            // 에러가 발생하지 않으면 프로필에 세팅
             set({ profile: profiles ?? null });
           }
+
+          set({ isLoading: false });
         },
         clearAuth: () =>
           set((state) => {

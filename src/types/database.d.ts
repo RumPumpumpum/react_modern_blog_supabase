@@ -45,7 +45,7 @@ export type Database = {
           bio: string | null
           created_at: string
           display_name: string | null
-          email: string
+          email: string | null
           id: string
         }
         Insert: {
@@ -53,7 +53,7 @@ export type Database = {
           bio?: string | null
           created_at?: string
           display_name?: string | null
-          email: string
+          email?: string | null
           id?: string
         }
         Update: {
@@ -61,7 +61,7 @@ export type Database = {
           bio?: string | null
           created_at?: string
           display_name?: string | null
-          email?: string
+          email?: string | null
           id?: string
         }
         Relationships: []
