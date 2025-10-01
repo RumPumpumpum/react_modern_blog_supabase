@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { useAuthStore } from "../../stores/authStore";
-import supabase from "../../utils/supabase";
+import { useAuthStore } from "../stores/authStore";
+import supabase from "../utils/supabase";
 
 export default function AuthBootstrap() {
   const hydrateFromAuth = useAuthStore((state) => state.hydrateFromAuth);

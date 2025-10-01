@@ -1,2 +1,2 @@
 import type { Database } from "./database";
-type Profile = Database<"profiles">;
+type Profile = Database["public"]["Tables"]["profiles"]["Row"];
